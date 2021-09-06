@@ -1,21 +1,19 @@
-package br.com.senai.stack;
+package br.com.senai.stack.tratamentodeexceções;
 
-public class Fluxo2 {
+public class Fluxo {
     public static void main(String[] args) {
         System.out.println("Ini do main");
         try {
             metodo1();
-        } catch (ArithmeticException | NullPointerException ex) {
-            ex.printStackTrace();
-            String msg = ex.getMessage();
-            System.out.println("Exception " + msg);
+        } catch (ArithmeticException ex) {
+            System.out.println("ArithmeticException");
         }
         System.out.println("Fim do main");
     }
 
     private static void metodo1() {
         System.out.println("Ini do metodo1");
-        metodo2();
+            metodo2();
         System.out.println("Fim do metodo2");
     }
 
@@ -23,9 +21,7 @@ public class Fluxo2 {
         System.out.println("Ini do metodo2");
         for (int i = 1; i <= 5; i++) {
             System.out.println(i);
-//            int a = i / 0;
-            Conta conta = null;
-            conta.deposita();
+            int a = i / 0;
         }
         System.out.println("Fim do metodo2");
     }
